@@ -1,0 +1,64 @@
+/* Basic styling for the page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Wrapper to center content */
+h1 {
+    font-size: 3em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Style the select box */
+select {
+    font-size: 1.2em;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    width: 200px;
+    margin-right: 10px;
+    margin-left: 20px;
+    margin-bottom: 0px;
+    background-color: #fff;
+}
+
+/* Style the button */
+button {
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button:active {
+    background-color: #397c39;
+}
+
+/* Small responsive styling */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    select, button {
+        width: 100%;
+        margin-top: 10px;
+    }
+}

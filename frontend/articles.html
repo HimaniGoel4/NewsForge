@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="articles.css">
+
+    <title>Articles</title>
+</head>
+
+<body>
+    <h1>Articles</h1>
+    <div id="articlesList"></div>
+
+    <script>
+        // Get the category from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get('category');
+
+        // Fetch articles based on the category
+        async function fetchArticles() {
+            try {
+                const response = await fetch(`http://localhost:5004/api/news?category=${category}`);
+                if (!response.ok) throw new Error('Failed to fetch articles');
+                const data = await response.json();
+
+                // Display the articles
+                const articlesList = document.getElementById('articlesList');
+                data.forEach(article => {
+                    const articleElement = document.createElement('div');
+                    articleElement.innerHTML = `
+                        <h3>${article.title}</h3>
+                        <p>${article.content}</p>
+                        <a href="${article.url}" target="_blank">Read More</a>
+                    `;
+                    articlesList.appendChild(articleElement);
+                });
+            } catch (error) {
+                console.error('Error fetching articles:', error);
+            }
+        }
+
+        // Fetch and display articles on page load
+        fetchArticles();
+    </script>
+</body>
+
+</html>
