@@ -1,6 +1,6 @@
 const fetchNews = async (category) => {
     try {
-        const response = await fetch(`http://localhost:5004/api/news?category=${category}`);
+        const response = await fetch(`https://newsforge-p9te.onrender.com/api/news?category=${category}`);
         const data = await response.json();
         if (response.ok) {
             displayArticles(data); // Call your function to display the articles
@@ -37,7 +37,7 @@ window.onload = fetchNews;
 // frontend/script.js
 document.addEventListener('DOMContentLoaded', function () {
     // Fetch articles from the backend when the page loads
-    fetch('http://localhost:5004/articles')  // Assuming the backend is running on port 5003
+    fetch('https://newsforge-p9te.onrender.com/articles')  // Assuming the backend is running on port 5003
         .then(response => response.json())
         .then(data => {
             const newsContainer = document.getElementById('news-container');
