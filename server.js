@@ -71,7 +71,8 @@ app.get('/api/news', async (req, res) => {
                 author: article.author,
                 publishedAt: article.publishedAt,
                 content: article.content,
-                source: article.source.name
+                source: article.source.name,
+                url: article.url
             }));
 
             res.status(200).json(articles);  // Send the articles in the response
