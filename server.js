@@ -83,6 +83,12 @@ app.get('/api/news', async (req, res) => {
     }
 });
 
+// Root route
+app.get('/', (req, res) => {
+    res.send('Welcome to the NewsForge API!');
+});
+
+
 
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
