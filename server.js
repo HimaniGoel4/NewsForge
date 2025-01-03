@@ -36,6 +36,7 @@ app.post('/articles/fetch', async (req, res) => {
             publishedAt: article.publishedAt,
             content: article.content,
             source: article.source.name,
+            url: article.url,
             processed: true
         }));
 
